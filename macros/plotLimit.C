@@ -51,7 +51,7 @@ int plotLimit(){
     for (unsigned iL(0); iL<3; ++iL) {
       lname.str("");
       lname << "ForAMM" << proc[iP] << syst[iL] << ".txt";
-      readLimit(lname.str(),lLimit[iP][iL],iP==2?1.35:0.095);
+      readLimit(lname.str(),lLimit[iP][iL],iP==2?1.35:0.001);
 
       std::sort(lLimit[iP][iL].begin(), lLimit[iP][iL].end(), customSortEps<Limit>(0));
     
@@ -118,12 +118,14 @@ int plotLimit(){
       gr[iP][iL]->SetLineColor(iL+1);
       gr[iP][iL]->SetLineWidth(2);
       gr[iP][iL]->Draw(iL==0?"AL":"Lsame");
-      if (iL==0) lat.DrawLatexNDC(0.1,0.95,proc[iP].c_str());
-      
+      if (iL==0) {
+	lat.SetTextSize(0.035);
+	lat.DrawLatexNDC(0.15,0.97,proc[iP].c_str());
+      }
     }
 
     mycC[iP]->Update();
-    mycC[iP]->Print(("figures/Limitvsmass_"+proc[iP]+".pdf").c_str());
+    mycC[iP]->Print(("../figures/Limitvsmass_"+proc[iP]+".pdf").c_str());
       
 
   }

@@ -68,7 +68,7 @@ void fillRateFromMap(const std::map<std::pair<double,double>,std::pair<unsigned,
     ltmp.mass = lIter->first.first;
     ltmp.eps = lIter->first.second;
     ltmp.rate1 = lIter->second.second;
-    bool oneProc = (ltmp.mass <= 0.1  || (ltmp.mass>=0.9 && ltmp.mass < 1.4) || ltmp.mass > 2.2);
+    bool oneProc = ((ltmp.mass>=0.9 && ltmp.mass < 1.4) || ltmp.mass > 2.2);
     unsigned nProc = lIter->second.first;
     if (oneProc ||
 	(!oneProc && nProc == 2)
@@ -92,7 +92,7 @@ int plotSensitivity(){
 
   const double clsval = 2.3;
   
-  const std::string prod="/home/amagnan/SOFTWARE/SHIP/ShipDPAnalysis/data/181201cor/";
+  const std::string prod="/home/amagnan/SOFTWARE/SHIP/ShipDPAnalysis/data/190216/";
 
   TLatex lat;
   char lbuf[500];
@@ -126,7 +126,7 @@ int plotSensitivity(){
     lname.str("");
     lname << prod << proc[iP] << "_Ana_rate1.dat";
     if (iP<3) {
-      readRate(lname.str(),lRate[iP],iP==2?1.35:0.095);
+      readRate(lname.str(),lRate[iP],iP==2?1.35:0.001);
       fillMap(lRate[iP],lMap[iP]);
     }
     else{
@@ -331,11 +331,12 @@ int plotSensitivity(){
     std::ostringstream lname;
     lname << "myc" << iP ;
     myc[iP] = new TCanvas(lname.str().c_str(),"",1);
+    myc[iP]->SetRightMargin(0.1);
   }
   
   for (unsigned iP(0); iP<nP; ++iP){
     myc[iP]->cd();
-    gPad->SetLogx(0);
+    gPad->SetLogx(1);
     gPad->SetLogy(0);
     gPad->SetLogz(1);
     if (iP==0) hSens[iP]->GetXaxis()->SetRangeUser(0,9.1);

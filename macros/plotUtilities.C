@@ -136,11 +136,11 @@ void readRate(const std::string & prodfile,
     lInput>>tmp.mass>>tmp.eps>>tmp.rate1;//>>tmp.rate2>>tmp.vtxEff;
 
     //protect against nan
-    if (tmp.rate1!=tmp.rate1) tmp.rate1=0;
+    if (tmp.rate1!=tmp.rate1 || tmp.rate1 < 1e-10) tmp.rate1=0;
     //if (tmp.rate2!=tmp.rate2) tmp.rate2=0;
 
     //protect against 0 values
-    if (tmp.mass>massMin){// && tmp.rate2>0.00000){
+    if (tmp.mass>massMin && tmp.rate1>0){
       ratevec.push_back(tmp);
     } else if (tmp.mass==0) {
       std::cout << " -- 0's for " << tmp.mass << " " << tmp.eps << " " << tmp.rate1
