@@ -1,4 +1,14 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper,]{article}
+
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{25.cm}%24
+\setlength{\oddsidemargin}{-0.2cm}
+%\setlength{\evensidemargin}{-0.54cm}
+\setlength{\topmargin}{-2cm}%-1.74
+%\setlength{\footskip}{2cm}
+%\setlength{\headheight}{0.6cm}
+%\setlength{\headsep}{0.5cm}%1.5
+
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -26,6 +36,9 @@
 \usepackage[colorlinks,linkcolor=Blue3]{hyperref}
 \usepackage[all]{hypcap} % Internal hyperlinks to floats.
 
+\linenumbers
+
+\hyphenation{brems-strah-lung}
 
 \begin{document}
 
@@ -41,8 +54,8 @@
 
 \begin{abstract}
 
-Dark photons are hypothetical new vector particles that could act as
-mediators between our standard model particles and a hidden
+Dark photons are hypothetical vector particles that could act as
+mediators between the standard model particles and a hidden
 sector. The simplest of such vector-portal models is fully
 characterised by only two parameters: the mass of the dark photon
 m$_{\gamma^{\mathrm{D}}}$ and its mixing parameter with the photon,
@@ -112,8 +125,8 @@ photon production and decay is reviewed in
 section~\ref{sec:DPprod}. The sensitivity of the SHiP detector is
 given in section~\ref{sec:sensitivity} for the three production modes
 studied and decay to visible fermions, in the minimal dark photon
-model. Leptophilic and leptophobic scenarios are also
-considered. Finally section~\ref{sec:concl} provides a conclusion.
+model. Leptophilic scenarios are also considered. Finally
+section~\ref{sec:concl} provides a conclusion.
 
 \section{The SHiP Detector and Simulation}
 \label{sec:shipdetector}
@@ -216,7 +229,7 @@ scale, so remains competitive only for masses below $\simeq 2$ GeV.
 The last production mode studied here is via a Drell-Yan like QCD
 process, or quark-quark annihilation into the dark photon, as
 described in subsection~\ref{sec:qcd} below. For this to happen, the
-dark photon mass can be in the 1-10 GeV range. Using the parton model
+dark photon mass can be in the 1.4-10 GeV range. Using the parton model
 with a factorisation scale below the GeV scale cannot give sensible
 results, as expected from the range of validity of parton distribution
 functions, and hence this area of phase-space has not been considered
@@ -256,7 +269,7 @@ photon of mass \mDP is kinematically allowed. Four processes are found
 largely dominant (with other contributions neglected) and shown in
 table~\ref{tab:mesonDecays}. The decay tables of these four mesons are
 reset to having only one decay mode allowed with 100\% branching ratio
-($\pi^{0}\rightarrow \gamma\gamma $,$\eta\rightarrow \gamma\gamma $,
+($\pi^{0}\rightarrow \gamma\gamma $, $\eta\rightarrow \gamma\gamma $,
 $\omega\rightarrow \pi^{0}\gamma $, $\eta'\rightarrow \gamma\gamma
 $). If several mesons of interest are produced, only the last one
 encountered is considered.
@@ -323,13 +336,6 @@ $\varepsilon^2$.
 	\sigma_{\mathrm{meson}} = \frac{\sigma_{\mathrm{pp}}^{\mathrm{non-diff}}}{\sigma_{\mathrm{pp}}^{\mathrm{tot}}} \times n_{\mathrm{meson}} \mathrm{/ p.o.t.} \times \Br(\mathrm{meson}\to \mathDP+X)\,.\label{eq:mesonRate}
 \end{align}
 
-\textcolor{red}{@TODO: Add this factor
-  $\frac{\sigma_{\mathrm{pp}}^{\mathrm{non-diff}}}{\sigma_{\mathrm{pp}}^{\mathrm{tot}}}
-  = 24/40 = 0.6$ to the limit calculations. I don't think it is
-  reasonable to assume what we are missing from cascade interactions
-  will compensate for this: for now we have no idea of the spectrum in
-  angle / momentum coming out of cascade decays....}
-
 \subsection{Production in proton bremsstrahlung}
 \label{sec:pbrem}
 
@@ -351,7 +357,7 @@ w_{ba}(z,p_\perp^2) &= \frac{\epsilon^2 \alpha_{QED}}{2\pi H}
 \end{align}
 
 where $\sigma_{pp}(s/s')$ are the inelastic proton-proton
-cross-sections evaluated for the incoming/outgoing proton energy
+cross sections evaluated for the incoming/outgoing proton energy
 scales, $m_p$, $P$ and $E_p$ are the proton beam mass (set to $m_p =
 0.938272081$\,GeV/c~\cite{Patrignani:2016xqp}) and initial momentum
 and energy respectively, $p$ and $E_{\mathDP}$ are the momentum and
@@ -382,8 +388,9 @@ considering direct parton-parton QCD production in
 section~\ref{sec:qcd}, to avoid double-counting this conservative
 option is adopted.
 
-The inelastic proton-proton cross-section $\sigma_{pp}(s)$ is taken
+The inelastic proton-proton cross section $\sigma_{pp}(s)$ is taken
 from experimental data:
+
 \begin{align}
 \sigma_{pp}(s) = Z + B\cdot \log^2\left(\frac{s}{s_0}\right) + Y_1\left(\frac{s_1}{s}\right)^{\eta_1} - 
 Y_2\left(\frac{s_1}{s}\right)^{\eta_2},
@@ -403,8 +410,6 @@ more chance to have p$<100$ GeV compared to p$>200$\,GeV, for the low
 masses, and increased probability to have high momentum as the mass
 increases, with the highest probability to have the maximum momentum
 available for \mDP$=2$\,GeV.
-
-\textcolor{red}{@TODO: Investigate divergence at high masses - high momentum: seems unphysical.}
 
 \begin{figure}[h!]
   \centering
@@ -445,8 +450,8 @@ has been done that similar kinematic distributions for the dark
 photons are found using another Z' implementation in Pythia from
 the ``New Gauge Bosons'' class of processes~\cite{Ciobanu:2005pv}.
 
-The dark photons are generated in the mass range $1 < \mathmDP <
-10$\,GeV. Below 1\,GeV one leaves the domain of perturbative QCD and
+The dark photons are generated in the mass range $1.4 < \mathmDP <
+10$\,GeV. Below 1.4\,GeV one leaves the domain of perturbative QCD and
 the parton model cannot be used anymore.
 
 The cross section given by Pythia when the new particle has the
@@ -457,24 +462,32 @@ parametrise the cross section as a function of the \DP mass in a
 continuous way, described in equation~\ref{eq:qcdXS}.
 
 \begin{align}
-  1 < \mathmDP \leq 1.4\,\mathrm{GeV} & : \sigma_{\mathrm{QCD}} =  0.0586-0.09037\times \mathmDP + 0.0360743\times \mathmDP^2\,, \label{eq:qcdXS} \\
-  1.4 < \mathmDP \leq 3\,\mathrm{GeV} & : \sigma_{\mathrm{QCD}} =  e^{-3.802-1.532\times \mathmDP}\,, \nonumber \\
-  \mathmDP > 3\,\mathrm{GeV} & : \sigma_{\mathrm{QCD}} =  e^{-5.673-0.8869\times \mathmDP}. \nonumber
+  %1 < \mathmDP \leq 1.4\,\mathrm{GeV} & : \sigma_{\mathrm{QCD}} =  0.0586-0.09037\times \mathmDP + 0.0360743\times \mathmDP^2\,, \label{eq:qcdXS} \\
+  1.4 < \mathmDP \leq 3\,\mathrm{GeV} & : \sigma_{\mathrm{QCD}} =  \varepsilon^2 \times e^{-4.1477-1.4745\times \mathmDP}\,, \label{eq:qcdXS} \\
+  \mathmDP > 3\,\mathrm{GeV} & : \sigma_{\mathrm{QCD}} =  \varepsilon^2 \times e^{-5.928-0.8669\times \mathmDP}. \nonumber
 \end{align}
 
 
 \begin{figure}[h!]
   \centering
-\includegraphics[width=1.\textwidth]{figures/qcdXSnorm_massFit.pdf}
-\caption{QCD production cross section as a function of \mDP, for
-  different values of $\varepsilon$. The fit function is described in
-  equation~\ref{eq:qcdXS}.}
+\includegraphics[width=1.\textwidth]{figures/qcdXSnorm_massFit_WithSysts.pdf}
+\caption{QCD production cross section as a function of \mDP. The fit
+  function is described in equation~\ref{eq:qcdXS}. The lower pad
+  shows the relative uncertainties from several theoretical
+  uncertainty sources on the cross section calculated by Pythia.}
 \label{fig:qcdXS}
 \end{figure}
 
-\textcolor{red}{@TODO: Drop anything below 1.4 GeV ? Discontinuity seems weird... Probably PDF evolution is already not good, 1.4 GeV was quoted by Steven Mrenna (Pythia8)....}
+The relative contribution from each process is shown in
+figure~\ref{fig:allXS}, as a function of \mDP, for the three
+production modes.
 
-\textcolor{red}{@TODO: Add figure of the relative contributions from each process as a function of \mDP.}
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=1.\textwidth]{figures/XSvsMass.pdf}
+\caption{Relative contributions to the cross section as a function of \mDP for the three production modes studied.}
+\label{fig:allXS}
+\end{figure}
 
 
 \subsection{Dark photon decays}
@@ -487,21 +500,27 @@ bremsstrahlung the \DP is made a proper resonance. In all cases, the
 decay modes are implemented by hand as follows.
 
 The partial decay width of the dark photon into a lepton pair is given by~\cite{Blumlein:2013cua}:
+
 \begin{align}
 	\Gamma(\mathDP \rightarrow l^+ l^-) = \frac{1}{3} \alpha_{\rm QED} m_{\mathDP} \epsilon^2 \sqrt{1 - \frac{4 m_l^2}{m_{\mathDP}^2}}\left(1 + \frac{2 m_l^2}{m_{\mathDP}^2}\right)~,\label{eq:dp-decay}
 \end{align}
+
 where $m_l$ is the lepton mass, for electron, muon or tau leptons, if
 kinematically allowed. Following the approach used by the authors
 of~\cite{Bjorken:2009mm}, the partial decay width into quark pairs is
 computed as:
+
 \begin{align}
 	\Gamma(\mathDP \rightarrow~\text{hadrons}) = \frac{1}{3} \alpha_{\rm QED} m_{\mathDP} \epsilon^2 
 	R\left(m_{\mathDP}\right)~,
 \end{align}
+
 where
+
 \begin{align}
 	R\left(\sqrt{s}\right) = \frac{\sigma(e^+e^- \rightarrow hadrons)}{\sigma(e^+e^- \rightarrow \mu^+\mu^-)}
 \end{align}
+
 is the energy-dependent R-ratio quantifying the hadronic annihilation
 in $e^+e^-$ collisions~\cite{Agashe:2014kda}, tabulated from 0.3 to
 10.29 GeV.
@@ -592,26 +611,41 @@ by excluding regions where more than 2.3 events are expected.
 \subsection{Decay modes}
 
 The following decay modes are considered, whenever available according
-to \mDP: e$^{+}$e$^{-}$, $\mu^{+}\mu^{-}$, $\pi^{+}\pi^{-}+X$,
-K$^{+}$K$^{-}$, $\tau^{+}\tau^{-}$ in one-prong decay modes, and any
-other hadronic decay modes leading to two charged particles passing the
-selection from section~\ref{sec:reco}.
+to \mDP: e$^{+}$e$^{-}$, $\mu^{+}\mu^{-}$, $\tau^{+}\tau^{-}$ in
+one-prong decay modes, and any other hadronic decay modes leading to
+two charged particles (e.g. $\pi^{+}\pi^{-}+X$, $K^{+}K^{-}+X$).
+The branching ratio to the different decay modes is shown in
+figure~\ref{fig:brdecay} for all the simulated (\mDP, $\varepsilon$)
+points in the three different production modes, as a function of \mDP,
+calculating the mean value over the different $\varepsilon$
+samples.
 
-\textcolor{red}{@TODO: Add one plot (BR independent of production
-  mode...), showing full mass range 0.1 to 6 GeV, possibly in log
-  scale for the mass axis is better visibility of the decay modes,
-  with the final state particles BR vs mass, for these categories:
-  e+e- and mu+mu- together, tau+tau- in 1-prong decays,
-  $\pi^{+}\pi^{-}+X$, K$^{+}$K$^{-}$, and all the others as
-  ``others'', and their sum (the difference between that sum and 1
-  being the decay modes we are not accessible to due to two charged
-  tracks selection).}
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=1.\textwidth]{figures/DecayBRvsMass_final_logX.pdf}
+\caption{Branching ratio to the visible decay channels producing two charged particles, as a function of \mDP.}
+\label{fig:brdecay}
+\end{figure}
+
 
 \subsection{Vessel acceptance}
 
-\textcolor{red}{@TODO: Plot of the vessel acceptance as a function of
-  \DP mass, for decay modes like above, and separately
-  for meson, pbrem, qcd. Also do couple of epsilon values ?}
+For events which have two charged particles, the \DP decay vertex is
+further required to be within the vessel volume. The efficiency of
+this selection is shown in figure~\ref{fig:Pvessel} as a function of
+(\mDP, $\varepsilon$), for the three production modes. This efficiency
+is mostly driven by the lifetime of the \DP, and the kinematics of the
+\DP produced in the target. It is around 5\% for meson and proton
+bremstrahlung productions, and reaches 10\% for higher masses in QCD
+production.
+
+  \begin{figure}[h!]
+  \centering
+\includegraphics[width=1.\textwidth]{figures/EffVesselvs2DMassEps_all.pdf}
+\caption{Efficiency of requiring the \DP decay vertex to be inside the decay vessel volume.}
+\label{fig:Pvessel}
+\end{figure}
+
 
 \subsection{Reconstruction of the decay products}
 \label{sec:reco}
@@ -634,8 +668,8 @@ magnetic field.
   \centering
   \begin{tabular}{|p{0.5\textwidth}|p{0.5\textwidth}|}
     \hline
-    Decay vertex & z between straw veto tagger and exit lid of vacuum vessel \\
-    & x-y within vessel volume \\
+    Decay vertex & z between straw veto tagger and exit lid of vacuum vessel (1\,m) \\
+    & x-y within vessel volume ($\pm 5$\,cm)\\
     \hline
     Straw tracker hits & in each layer - before and after magnet - up to station 4 \\
     \hline
@@ -648,15 +682,23 @@ magnetic field.
   \label{tab:recoSel}
 \end{table}
 
+The efficiency of having two good tracks passing the selection for
+events which had two charged particles and \DP vertex in the decay
+volume is shown in figure~\ref{fig:Preco}. Once the \DP decays in the
+volume, the reconstruction efficiency is above 80\% in most of the
+parameter space. For production via meson decay, a dependency on
+$\varepsilon$ is observed, with the efficiency dropping to below 50\%
+as $\varepsilon$ decreases.
 
+\begin{figure}[h!]
+  \centering
+\includegraphics[width=1.\textwidth]{figures/EffRecovs2DMassEps_all.pdf}
+\caption{Efficiency of requiring two good tracks, for events with two
+  charged particles and \DP vertex inside the vessel volume.}
+\label{fig:Preco}
+\end{figure}
 
-\textcolor{red}{@TODO: Describe selection requirements better, those driven
-  by detector fiducial and fit quality, and those applied to reduce
-  backgrounds. Plot reco efficiency for different decay modes like above,
-  ee+mumu, tautau, hadrons, and separately for meson, pbrem, qcd, vs
-  DP mass.}
-
-
+  
 \subsection{Systematic uncertainties}
 
 The following sources of systematic uncertainties from theory are
@@ -664,7 +706,9 @@ investigated, for the three modes. They concern only the overall
 normalisation, and not the impact from modifying the shapes of the \DP
 kinematic variables, for which we rely on Pythia 8 (for meson and QCD
 production) or available theoretical assumptions for the proton
-bremsstrahlung production as described in section~\ref{sec:pbrem}.
+bremsstrahlung production as described in section~\ref{sec:pbrem}. The
+missing contributions from cascade decays will be the subject of future
+work and is not considered.
 
 For the meson production, the overall rate is affected by the
 following uncertainties:
@@ -672,63 +716,58 @@ following uncertainties:
 \item which meson is chosen to give the kinematical properties of the
   event: first, last (central choice up to now), random. Because only
   one meson channel per mass range is considered, the impact is small:
-  \textcolor{red}{@TODO: evaluate impact}
+  \textcolor{red}{@TODO: evaluate impact}.
 \item Branching ratios from table~\ref{tab:mesonDecays}:
   from~\cite{Patrignani:2016xqp}, the uncertainties on the measurement
   of these branching ratios are 0.03\%, 0.5\%, 3.4\% and 3.6\% for
   $\pi^0\rightarrow\gamma\gamma$, $\eta^0\rightarrow \gamma\gamma$,
   $\omega\rightarrow \pi^{0}\gamma$ and $\eta^{\prime}\rightarrow
   \gamma\gamma$ respectively, translating directly to the final rate.
-\item uncertainty on n$_{\mathrm{meson}}$ / p.o.t.: from Pythia 8, as
+\item Uncertainty on n$_{\mathrm{meson}}$ / p.o.t.: from Pythia 8, as
   detailed in section~\ref{sec:meson} and table~\ref{tab:mesonDecays},
   they amount to 0.05\%, 1.1\%, 1.1\% and 3.8\% for $\pi^0$, $\eta^0$,
   $\omega$ and $\eta^{\prime}$ respectively, also translating directly
   to the final rate.
-\item uncertainty on
+\item Uncertainty on
   $\frac{\sigma_{\mathrm{pp}}^{\mathrm{non-diff}}}{\sigma_{\mathrm{pp}}^{\mathrm{tot}}}$:
   the uncertainty on $\sigma_{\mathrm{pp}}^{\mathrm{tot}}$ is
-  3\%. \textcolor{red}{@TODO: evaluate impact for Pythia sigma
-    non-diff, I don't know QCD uncertainties on this, presumably
-    standard QCD scales and PDF uncertainties to be evaluated... It
-    will probably end up dominant ?? }
-\item theory uncertainties on branching ratio of mesons to dark
+  3\%. A conservative 5\% is taken on the ratio, translating directly
+  to the final rate.
+\item Theory uncertainties on branching ratio of mesons to dark
   photons: \textcolor{red}{??}
-\item Missing contributions from cascade decays (future work).
 \end{itemize}
+Adding the different sources in quadrature, this results in a total
+systematic uncertainty of $\pm 5-7\%$ depending on the mass.
 
 For the proton bremsstrahlung, the theory systematic uncertainties concern:
 \begin{itemize}
-\item uncertainties on the inelastic proton-proton cross-section
+\item uncertainties on the inelastic proton-proton cross section
   $\sigma_{pp}(s)$ will mostly cancel in the ratio
   $\frac{\sigma_{pp}(s')}{\sigma_{pp}(s)}$ so are neglected.
-\item dipole form-factor: could consider no form-factor, but stopping
-  bremsstrahlung production exactly where QCD production starts, at
-  1.4\,GeV, and take difference as systematic.
-\item uncertainty on w$_{ba}$: \textcolor{red}{??}
-\item divergence at high p for high masses : \textcolor{red}{to be investigated}.
-\item lower bound on p: \textcolor{red}{?}
-\item Missing contributions from cascade decays (future work).
+\item Dipole form-factor.
+\item Uncertainty on w$_{ba}$: \textcolor{red}{??}
+\item Divergence at high p for high masses : \textcolor{red}{to be investigated}.
+\item Lower bound on p: \textcolor{red}{?}
 \end{itemize}
+A total systematic uncertainty of $\pm 20\%$ is assumed to cover these
+sources.
 
-For the QCD production, the theory systematic uncertainties concern:
-\begin{itemize}
-\item Parametrisation of the cross section, impact from QCD scales and
-  PDFs: \textcolor{red}{to be evaluated}.
-\item Missing contributions from cascade decays (future work).
-\end{itemize}
+For the QCD production, the theory systematic uncertainties concern
+the parametrisation of the cross section, and impact from QCD scales
+and PDFs. Figure~\ref{fig:qcdXS} shows the relative contributions from
+QCD scales and PDF. The choice of PDF set is not taken as a systematic
+uncertainty, given the large variations observed which are
+nevertheless not affecting the overall shape of the cross section
+versus mass. Adding the different sources in quadrature, this results
+in a conservative total systematic uncertainty of $^{+5\%}_{-10\%}$.
 
 Experimental systematic uncertainties concern:
 \begin{itemize}
-\item modelling of the tracking efficiency
-\item 0-background assumption
+\item modelling of the tracking efficiency,
+\item 0-background assumption.
 \end{itemize}
-
-
-\textcolor{red}{@TODO: From these sources added in quadrature, we
-  could add an uncertainty band on the exclusion contour. It would
-  make sense for the QCD result for example (will probably be
-  invisible for the other 2 modes, I hope...)  which do depend a lot
-  on the overall normalisation. }
+They have been neglected in this study, expected to be small compared
+to the theoretical uncertainties.
 
 \subsection{Extraction of the limit}
 
@@ -748,8 +787,9 @@ up to a turn-on point where the decay vertex happens after the decay
 vessel and/or the cross section becomes too small. Hence the 90\% CL
 exclusion region is contained inside a lower and upper limits on
 $\varepsilon^2$ for each mass point. The dependency of the excluded
-region on the mass is driven by the kinematic of the \DP and its
-daughters, affecting the detector acceptance and selection efficiency.
+region on the mass is driven by the kinematic properties of the \DP
+and its daughters, affecting the detector acceptance and selection
+efficiency.
 
 As shown in figure~\ref{fig:ratevseps} for representative mass points,
 for meson and proton bremsstrahlung processes, the bounds have very
@@ -757,21 +797,40 @@ little dependency on the absolute normalisation of the rate (so in
 particular systematic uncertainties on the cross sections and other
 quantities affecting the overall rate), due to the very steep
 dependency of the rate as a function of $\varepsilon$. However, for
-the QCD production, the behaviour is flatter and just a factor 2 boost
-in signal rate can lead to an extra GeV in sensitivity.
+the QCD production, the behaviour is flatter and 5\% increase in rate
+leads to an extra 0.1 GeV in sensitivity.
 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.32\textwidth]{figures/CheckRate_hTest_meson_M5.pdf}
+  \includegraphics[width=0.32\textwidth]{figures/RatevsEpsilon_meson_m870.pdf}
   \hfill
-  \includegraphics[width=0.32\textwidth]{figures/CheckRate_hTest_pbrem_M15.pdf}
+  \includegraphics[width=0.32\textwidth]{figures/RatevsEpsilon_pbrem_m2100.pdf}
   \hfill
-\includegraphics[width=0.32\textwidth]{figures/CheckRate_hTest_qcd_M35.pdf}\\
-\caption{Expected rate as a function of $\varepsilon$, for \mDP$=0.5$ (left),
-  1.5 (middle) or 3.5 (right) GeV and meson, proton bremsstrahlung or QCD production,
+  \includegraphics[width=0.32\textwidth]{figures/RatevsEpsilon_qcd_m4100.pdf}
+\caption{Expected rate as a function of $\varepsilon$, for \mDP$=0.87$ (left),
+  2.1 (middle) or 4.1 (right) GeV and meson, proton bremsstrahlung or QCD production,
   respectively.}
 \label{fig:ratevseps}
+\end{figure}
+
+The 90\% CL exclusion contours are shown in figure~\ref{fig:sensSysts}
+for the three production mode studied, in the (\mDP,$\varepsilon$)
+plane, with the impact from systematic uncertainties.
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.32\textwidth]{figures/Limitvsmass_meson.pdf}
+  \hfill
+  \includegraphics[width=0.32\textwidth]{figures/Limitvsmass_pbrem.pdf}
+  \hfill
+  \includegraphics[width=0.32\textwidth]{figures/Limitvsmass_qcd.pdf}
+\caption{Expected 90\% exclusion region as a function of the dark
+  photon mass and of the kinetic mixing parameter $\varepsilon$, for
+  the three production modes studied. Systematic variations are shown
+  with red and green lines.}
+\label{fig:sensSysts}
 \end{figure}
 
 
